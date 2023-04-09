@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Encontrar Zeros de Função</title>
+  <style>
+    /* Estilo do formulário */
+    body {
+      background-color: #f5f5f7;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background-image: url('https://gfycat.com/grandgraciousgallinule');
+    }
+
+  
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      margin-top: 100px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    form {
+      display: grid;
+      gap: 8px;
+    }
+    label {
+      font-size: 14px;
+      color: #999999;
+    }
+    input[type="number"],
+    input[type="text"] {
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      background-color: #f9f9f9;
+      font-size: 14px;
+      color: #333333;
+      box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+    input[type="submit"] {
+      padding: 10px;
+      background-color: #007aff;
+      color: #ffffff;
+      font-size: 14px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #333333;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+      <h1>Encontrar Zeros de Função 🔍</h1>
+      <form id="formulario">
+        <div class="input-container">
+          <label for="coef_x1">Coeficiente de x°:</label>
+          <input type="number" id="coef_x0" name="coef_x0" step="any" class="input-field">
+        </div>
+        <div class="input-container">
+          <label for="coef_x1">Coeficiente de x¹:</label>
+          <input type="number" id="coef_x1" name="coef_x1" step="any" class="input-field">
+        </div>
+        <div class="input-container">
+          <label for="coef_x2">Coeficiente de x²:</label>
+          <input type="number" id="coef_x2" name="coef_x2" step="any" class="input-field">
+        </div>
+        <div class="input-container">
+          <label for="coef_x3">Coeficiente de x³:</label>
+          <input type="number" id="coef_x3" name="coef_x3" step="any" class="input-field">
+        </div>
+        <div class="input-container">
+          <label for="coef_x4">Coeficiente de x⁴:</label>
+          <input type="number" id="coef_x4" name="coef_x4" step="any" class="input-field">
+        </div>
+        <div class="input-container">
+          <label for="coef_x5">Coeficiente de x⁵:</label>
+          <input type="number" id="coef_x5" name="coef_x5" step="any" class="input-field">
+        </div>
+        <div class="input-container">
+          <label for="coef_x6">Coeficiente de x⁶:</label>
+          <input type="number" id="coef_x6" name="coef_x6" step="any" class="input-field">
+        </div>
+        <div class="input-container">
+          <label for="coef_x7">Coeficiente de x⁷:</label>
+          <input type="number" id="coef_x7" name="coef_x7" step="any" class="input-field">
+        </div>
+        <div class="input-container">
+          <label for="coef_x8">Coeficiente de x⁸:</label>
+          <input type="number" id="coef_x8" name="coef_x8" step="any" class="input-field">
+        </div>
+        <div class="input-container">
+          <label for="coef_x9">Coeficiente de x⁹:</label>
+          <input type="number" id="coef_x9" name="coef_x9" step="any" class="input-field">
+        </div>
+        <div class="input-container">
+          <label for="i">Termo independente:</label>
+          <input type="text" id="i" name="i" class="input-field">
+        </div>
+        <div class="input-container">
+          <label for="epsilon">Epsilon:</label>
+          <input type="number" id="epsilon" name="epsilon" step="any" class="input-field">
+        </div>
+        <input type="submit" value="Calcular">
+      </form>
+      <div id="resultado"></div>
+    </div>
+  </body>
+  <style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .input-container {
+    display: inline-block;
+    width: 49%;
+    margin-bottom: 10px;
+  }
+  
+  .input-field {
+    width: 100%;
+  }
+</style>
+  <style>
+
+      body {
+        background-image: url('https://gfycat.com/grandgraciousgallinule');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+  
+    
+      ::after {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #773737; 
+        opacity: 0.5; 
+        z-index: -1;
+    }
+  </style>
+
+</html>
