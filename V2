@@ -1,0 +1,82 @@
+import copy
+
+
+#Função para calcular o valor de f(x) quando imputado x
+def calcular_fdx(x9, x8, x7, x6, x5, x4, x3, x2, x1, i, x):    
+    return (x**9)*x9 + (x**8)*x8 + (x**7)*x7 + (x**6)*x6 + (x**5)*x5 + (x**4)*x4 + (x**3)*x3 + (x**2)*x2 + x*x1 + i
+
+#para encontrar as mudanças de sinais utilizando o método de bolzano.
+def encontrar_zeros(x9, x8, x7, x6, x5, x4, x3, x2, x1, i, epsilon):
+    lista_de_valores = []
+    
+    for interacao in range(-10, 11):
+        fdx = calcular_fdx(x9, x8, x7, x6, x5, x4, x3, x2, x1, i, interacao)
+        fdx_1 = calcular_fdx(x9, x8, x7, x6, x5, x4, x3, x2, x1, i, interacao+1)
+        print(f'Para x = {interacao}, f(x) = {fdx}')
+        sinal = fdx / abs(fdx)
+        if sinal != fdx_1 / abs(fdx_1):
+            lista_de_valores.append((interacao, interacao+1))
+
+#dividindo a lista_de_valores em 3 partes para poder calcular os 3 zeros da função
+    tamanho_lista = len(lista_de_valores)
+    tamanho_parte = tamanho_lista // 3
+
+    parte1 = lista_de_valores[:tamanho_parte]
+    parte2 = lista_de_valores[tamanho_parte:2*tamanho_parte]
+    parte3 = lista_de_valores[2*tamanho_parte:]
+
+    print("Parte 1:", parte1)
+    print("Parte 2:", parte2)
+    print("Parte 3:", parte3)
+    
+    valorA = copy.deepcopy(parte1[0][0])
+    valorB = copy.deepcopy(parte1[0][1])
+    while abs(valorB - valorA) > epsilon:
+        print(f'Vamos calcular os zeros da função que estão em {valorA} e {valorB}')
+        ponto_medio = float((valorA + valorB)/2)
+        fdx = calcular_fdx(x9, x8, x7, x6, x5, x4, x3, x2, x1, i, ponto_medio)
+        if fdx >= 0:
+            valorB = ponto_medio
+        else:
+            valorA = ponto_medio
+    print(f'O zero da função da parte 1 está em {ponto_medio:.10f}')
+
+    valorA = copy.deepcopy(parte2[0][0])
+    valorB = copy.deepcopy(parte2[0][1])
+    while abs(valorB - valorA) > epsilon:
+        print(f'Vamos calcular os zeros da função que estão em {valorA} e {valorB}')
+        ponto_medio = float((valorA + valorB)/2)
+        fdx = calcular_fdx(x9, x8, x7, x6, x5, x4, x3, x2, x1, i, ponto_medio)
+        if fdx >= 0:
+            valorB = ponto_medio
+        else:
+            valorA = ponto_medio
+    print(f'O zero da função da parte 2 está em {ponto_medio:.10f}')
+
+    valorA = copy.deepcopy(parte3[0][0])
+    valorB = copy.deepcopy(parte3[0][1])
+    while abs(valorB - valorA) > epsilon:
+        print(f'Vamos calcular os zeros da função que estão em {valorA} e {valorB}')
+        ponto_medio = float((valorA + valorB)/2)
+        fdx = calcular_fdx(x9, x8, x7, x6, x5, x4, x3, x2, x1, i, ponto_medio)
+        if fdx >= 0:
+            valorB = ponto_medio
+        else:
+            valorA = ponto_medio
+    print(f'O zero da função da parte 3 está em {ponto_medio:.10f}')
+
+#solicitação dos inputs ao usuário
+x9 = float(input('Digite o coeficiente de x^9: '))
+x8 = float(input('Digite o coeficiente de x^8: '))
+x7 = float(input('Digite o coeficiente de x^7: '))
+x6 = float(input('Digite o coeficiente de x^6: '))
+x5 = float(input('Digite o coeficiente de x^5: '))
+x4 = float(input('Digite o coeficiente de x^4: '))
+x3 = float(input('Digite o coeficiente de x^3: '))
+x2 = float(input('Digite o coeficiente de x^2: '))
+x1 = float(input('Digite o coeficiente de x^1: '))
+i = float(input('Digite o termo idependente: '))
+epsilon = float(input('Digite o epsilon: '))
+
+#chama a função da linha 3...
+encontrar_zeros(x9, x8, x7, x6, x5, x4, x3, x2, x1, i, epsilon)
